@@ -1,0 +1,64 @@
+/* VARIABLES */
+$backgroundColor: #aaaaaa;
+
+/* MIXINS */
+@mixin centerContent() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GENERAL */
+body {
+    background-color: $backgroundColor;
+}
+
+.App {
+    @include centerContent();
+    flex-direction: column;
+
+    #length-container {
+        @include centerContent();
+        flex-direction: row;
+
+
+    }
+
+}
+
+/* LENGTH COMPONENTS */
+.length-component {
+    margin: 1rem;
+    .display-container {
+        @include centerContent();
+    
+        .down-btn, .up-btn {
+            margin: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* Timeleft component */
+#timer-component {
+    @include centerContent();
+    flex-direction: column;
+    text-align: center;
+
+    #controls {
+        @include centerContent();
+
+        .control-item {
+
+            margin: 0 2rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+    }
+}
